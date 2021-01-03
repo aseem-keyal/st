@@ -5,8 +5,15 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "mono:pixelsize=14:antialias=true:autohint=true";
-static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
+static char *font = "Hack:style=Regular:pixelsize=13:antialias=true:autohint=true";
+static char *font2[] = { 
+	"Font Awesome 5 Free Regular:style=Regular:pixelsize=8:antialias=true:autohint=true",
+	"Noto Sans Mono CJK JP:style=Regular",
+	"Noto Sans Mono CJK KR:style=Regular",
+	"Noto Sans Mono CJK SC:style=Regular",
+	"Noto Sans Mono CJK TC:style=Regular",
+	"Noto Sans Mono CJK HK:style=Regular" 
+};
 static int borderpx = 2;
 
 /*
@@ -108,7 +115,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 0.7;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -141,8 +148,8 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 259;
-unsigned int defaultbg = 258;
+unsigned int defaultfg = 15;
+unsigned int defaultbg = 0;
 unsigned int defaultcs = 256;
 unsigned int defaultrcs = 257;
 
@@ -197,8 +204,8 @@ ResourcePref resources[] = {
 		{ "color13",      STRING,  &colorname[13] },
 		{ "color14",      STRING,  &colorname[14] },
 		{ "color15",      STRING,  &colorname[15] },
-		{ "background",   STRING,  &colorname[258] },
-		{ "foreground",   STRING,  &colorname[259] },
+		{ "background",   STRING,  &colorname[0] },
+		{ "foreground",   STRING,  &colorname[15] },
 		{ "cursorColor",  STRING,  &colorname[256] },
 		{ "termname",     STRING,  &termname },
 		{ "shell",        STRING,  &shell },
